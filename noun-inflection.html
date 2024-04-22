@@ -1,4 +1,3 @@
-
 <html>
 <title>Slovene noun inflection</title>
 <meta charset="utf-8">
@@ -17,7 +16,17 @@ td {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
+button {
+	background-color: #ddd;
+	border: none;
+	color: black;
+	padding: 0.3em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 0.1em;
+	cursor: pointer;
+}
 .hiddenText {
     color: transparent;
 }
@@ -32,16 +41,15 @@ td {
     <option value="disappear">Disappear Mode</option>
     <option value="clear">Clear Mode</option>
 </select>
-<button id="clearButton">Clear All</button><br>
-<button id="shuffleButton">Shuffle Rows</button><br>
+<br>
 
+Filters:
 <select id="genderFilter">
     <option value="all">All genders</option>
     <option value="M.">M.</option>
     <option value="F.">F.</option>
     <option value="N.">N.</option>
 </select>
-
 
 <select id="numberFilter">
     <option value="all">All numbers</option>
@@ -60,9 +68,16 @@ td {
     <option value="Ins">Ins</option>
 </select>
 
-<br><button onclick="resetFilters()">Reset Filters</button> <button onclick="reloadPage()">Reload Page</button>
+<br>
+<button onclick="resetFilters()">Reset Filters</button>
+<button id="shuffleButton">Shuffle Rows</button>
+<button id="clearButton">Clear All</button>
 
-<table id="data-table"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>1</td><td style="color:blue">M.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–∅</td><td class="hiddenText">–∅</td></tr><tr><td>2</td><td style="color:blue">M.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–a</td><td class="hiddenText">–ega</td></tr><tr><td>3</td><td style="color:blue">M.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–u</td><td class="hiddenText">–emu</td></tr><tr><td>4</td><td style="color:blue">M.</td><td>Sg</td><td>Acc</td><td class="hiddenText">(–a)</td><td class="hiddenText">(–ega)</td></tr><tr><td>5</td><td style="color:blue">M.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–u</td><td class="hiddenText">–em</td></tr><tr><td>6</td><td style="color:blue">M.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>7</td><td style="color:blue">M.</td><td>Du</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>8</td><td style="color:blue">M.</td><td>Du</td><td>Gen</td><td class="hiddenText">–ov</td><td class="hiddenText">–ih</td></tr><tr><td>9</td><td style="color:blue">M.</td><td>Du</td><td>Dat</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>10</td><td style="color:blue">M.</td><td>Du</td><td>Acc</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>11</td><td style="color:blue">M.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>12</td><td style="color:blue">M.</td><td>Du</td><td>Ins</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>13</td><td style="color:blue">M.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>14</td><td style="color:blue">M.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–ov</td><td class="hiddenText">–ih</td></tr><tr><td>15</td><td style="color:blue">M.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>16</td><td style="color:blue">M.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>17</td><td style="color:blue">M.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>18</td><td style="color:blue">M.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–i</td><td class="hiddenText">–imi</td></tr><tr><td>19</td><td style="color:red">F.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>20</td><td style="color:red">F.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>21</td><td style="color:red">F.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>22</td><td style="color:red">F.</td><td>Sg</td><td>Acc</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>23</td><td style="color:red">F.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>24</td><td style="color:red">F.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>25</td><td style="color:red">F.</td><td>Du</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>26</td><td style="color:red">F.</td><td>Du</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>27</td><td style="color:red">F.</td><td>Du</td><td>Dat</td><td class="hiddenText">–ama</td><td class="hiddenText">–ima</td></tr><tr><td>28</td><td style="color:red">F.</td><td>Du</td><td>Acc</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>29</td><td style="color:red">F.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ah</td><td class="hiddenText">–ih</td></tr><tr><td>30</td><td style="color:red">F.</td><td>Du</td><td>Ins</td><td class="hiddenText">–ama</td><td class="hiddenText">–ima</td></tr><tr><td>31</td><td style="color:red">F.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>32</td><td style="color:red">F.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>33</td><td style="color:red">F.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–am</td><td class="hiddenText">–im</td></tr><tr><td>34</td><td style="color:red">F.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>35</td><td style="color:red">F.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ah</td><td class="hiddenText">–ih</td></tr><tr><td>36</td><td style="color:red">F.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–ami</td><td class="hiddenText">–imi</td></tr><tr><td>37</td><td style="color:green">N.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>38</td><td style="color:green">N.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–a</td><td class="hiddenText">–ega</td></tr><tr><td>39</td><td style="color:green">N.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–u</td><td class="hiddenText">–emu</td></tr><tr><td>40</td><td style="color:green">N.</td><td>Sg</td><td>Acc</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>41</td><td style="color:green">N.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–u</td><td class="hiddenText">–em</td></tr><tr><td>42</td><td style="color:green">N.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>43</td><td style="color:green">N.</td><td>Du</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>44</td><td style="color:green">N.</td><td>Du</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>45</td><td style="color:green">N.</td><td>Du</td><td>Dat</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>46</td><td style="color:green">N.</td><td>Du</td><td>Acc</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>47</td><td style="color:green">N.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>48</td><td style="color:green">N.</td><td>Du</td><td>Ins</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>49</td><td style="color:green">N.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>50</td><td style="color:green">N.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>51</td><td style="color:green">N.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>52</td><td style="color:green">N.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>53</td><td style="color:green">N.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>54</td><td style="color:green">N.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–i</td><td class="hiddenText">–imi</td></tr></tbody></table>
+<table id="data-table"><tbody>
+<tr><td>1</td><td style="color:blue">M.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–∅</td><td class="hiddenText">–∅</td></tr><tr><td>2</td><td style="color:blue">M.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–a</td><td class="hiddenText">–ega</td></tr><tr><td>3</td><td style="color:blue">M.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–u</td><td class="hiddenText">–emu</td></tr><tr><td>4</td><td style="color:blue">M.</td><td>Sg</td><td>Acc</td><td class="hiddenText">(–a)</td><td class="hiddenText">(–ega)</td></tr><tr><td>5</td><td style="color:blue">M.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–u</td><td class="hiddenText">–em</td></tr><tr><td>6</td><td style="color:blue">M.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>7</td><td style="color:blue">M.</td><td>Du</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>8</td><td style="color:blue">M.</td><td>Du</td><td>Gen</td><td class="hiddenText">–ov</td><td class="hiddenText">–ih</td></tr><tr><td>9</td><td style="color:blue">M.</td><td>Du</td><td>Dat</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>10</td><td style="color:blue">M.</td><td>Du</td><td>Acc</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>11</td><td style="color:blue">M.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>12</td><td style="color:blue">M.</td><td>Du</td><td>Ins</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>13</td><td style="color:blue">M.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>14</td><td style="color:blue">M.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–ov</td><td class="hiddenText">–ih</td></tr><tr><td>15</td><td style="color:blue">M.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>16</td><td style="color:blue">M.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>17</td><td style="color:blue">M.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>18</td><td style="color:blue">M.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–i</td><td class="hiddenText">–imi</td></tr>
+<tr><td>19</td><td style="color:red">F.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>20</td><td style="color:red">F.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>21</td><td style="color:red">F.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>22</td><td style="color:red">F.</td><td>Sg</td><td>Acc</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>23</td><td style="color:red">F.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>24</td><td style="color:red">F.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>25</td><td style="color:red">F.</td><td>Du</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>26</td><td style="color:red">F.</td><td>Du</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>27</td><td style="color:red">F.</td><td>Du</td><td>Dat</td><td class="hiddenText">–ama</td><td class="hiddenText">–ima</td></tr><tr><td>28</td><td style="color:red">F.</td><td>Du</td><td>Acc</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>29</td><td style="color:red">F.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ah</td><td class="hiddenText">–ih</td></tr><tr><td>30</td><td style="color:red">F.</td><td>Du</td><td>Ins</td><td class="hiddenText">–ama</td><td class="hiddenText">–ima</td></tr><tr><td>31</td><td style="color:red">F.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>32</td><td style="color:red">F.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>33</td><td style="color:red">F.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–am</td><td class="hiddenText">–im</td></tr><tr><td>34</td><td style="color:red">F.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>35</td><td style="color:red">F.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ah</td><td class="hiddenText">–ih</td></tr><tr><td>36</td><td style="color:red">F.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–ami</td><td class="hiddenText">–imi</td></tr>
+<tr><td>37</td><td style="color:green">N.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>38</td><td style="color:green">N.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–a</td><td class="hiddenText">–ega</td></tr><tr><td>39</td><td style="color:green">N.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–u</td><td class="hiddenText">–emu</td></tr><tr><td>40</td><td style="color:green">N.</td><td>Sg</td><td>Acc</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>41</td><td style="color:green">N.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–u</td><td class="hiddenText">–em</td></tr><tr><td>42</td><td style="color:green">N.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>43</td><td style="color:green">N.</td><td>Du</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>44</td><td style="color:green">N.</td><td>Du</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>45</td><td style="color:green">N.</td><td>Du</td><td>Dat</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>46</td><td style="color:green">N.</td><td>Du</td><td>Acc</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>47</td><td style="color:green">N.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>48</td><td style="color:green">N.</td><td>Du</td><td>Ins</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>49</td><td style="color:green">N.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>50</td><td style="color:green">N.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>51</td><td style="color:green">N.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>52</td><td style="color:green">N.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>53</td><td style="color:green">N.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>54</td><td style="color:green">N.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–i</td><td class="hiddenText">–imi</td></tr>
+</tbody></table>
 
 <script>
 document.querySelectorAll('td').forEach(cell => {
@@ -97,11 +112,29 @@ document.getElementById('modeSelector').addEventListener('change', function() {
     });
 });
 
+let originalOrder = []; // Array to store the original row order
+
+document.addEventListener('DOMContentLoaded', function() {
+    const table = document.getElementById('data-table');
+    originalOrder = Array.from(table.querySelectorAll('tr')); // Store original row order on load
+});
+
 document.getElementById('shuffleButton').addEventListener('click', function() {
+    let button = document.getElementById('shuffleButton');
     let table = document.getElementById('data-table');
     let rows = Array.from(table.querySelectorAll('tr'));
-    shuffleArray(rows);
-    // Clear the table and re-append rows in new order
+
+    if (button.textContent === "Shuffle Rows") {
+        // Shuffle the rows
+        shuffleArray(rows);
+        button.textContent = "Undo Shuffle"; // Change button text to "Undo Shuffle"
+    } else {
+        // Restore the original order
+        rows = originalOrder;
+        button.textContent = "Shuffle Rows"; // Change button text back to "Shuffle Rows"
+    }
+
+    // Clear the table and re-append rows in new or original order
     while (table.firstChild) {
         table.removeChild(table.firstChild);
     }
@@ -154,8 +187,5 @@ function resetFilters() {
     filterTable();  // Call filterTable to reset the view
 }
 
-function reloadPage() {
-	window.location.reload();
-}
 </script>
 </body>
