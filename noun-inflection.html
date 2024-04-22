@@ -1,5 +1,5 @@
 <html>
-<title>Slovene noun inflection</title>
+<title>Slovene noun inflection quiz</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -35,12 +35,13 @@ button {
     color: black;
 }
 </style>
-<h2>Slovene noun inflection</h2>
+<h2>Slovene noun inflection quiz</h2>
 <label>Mode:</label>
 <select id="modeSelector">
     <option value="disappear">Disappear Mode</option>
-    <option value="clear">Clear Mode</option>
+    <option value="clear">Clear Mode</option> 
 </select>
+<button id="clearButton">Clear All</button>
 <br>
 
 Filters:
@@ -71,7 +72,6 @@ Filters:
 <br>
 <button onclick="resetFilters()">Reset Filters</button>
 <button id="shuffleButton">Shuffle Rows</button>
-<button id="clearButton">Clear All</button>
 
 <table id="data-table"><tbody>
 <tr><td>1</td><td style="color:blue">M.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–∅</td><td class="hiddenText">–∅</td></tr><tr><td>2</td><td style="color:blue">M.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–a</td><td class="hiddenText">–ega</td></tr><tr><td>3</td><td style="color:blue">M.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–u</td><td class="hiddenText">–emu</td></tr><tr><td>4</td><td style="color:blue">M.</td><td>Sg</td><td>Acc</td><td class="hiddenText">(–a)</td><td class="hiddenText">(–ega)</td></tr><tr><td>5</td><td style="color:blue">M.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–u</td><td class="hiddenText">–em</td></tr><tr><td>6</td><td style="color:blue">M.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>7</td><td style="color:blue">M.</td><td>Du</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>8</td><td style="color:blue">M.</td><td>Du</td><td>Gen</td><td class="hiddenText">–ov</td><td class="hiddenText">–ih</td></tr><tr><td>9</td><td style="color:blue">M.</td><td>Du</td><td>Dat</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>10</td><td style="color:blue">M.</td><td>Du</td><td>Acc</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>11</td><td style="color:blue">M.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>12</td><td style="color:blue">M.</td><td>Du</td><td>Ins</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>13</td><td style="color:blue">M.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>14</td><td style="color:blue">M.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–ov</td><td class="hiddenText">–ih</td></tr><tr><td>15</td><td style="color:blue">M.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>16</td><td style="color:blue">M.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>17</td><td style="color:blue">M.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>18</td><td style="color:blue">M.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–i</td><td class="hiddenText">–imi</td></tr>
