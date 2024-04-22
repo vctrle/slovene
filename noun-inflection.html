@@ -1,0 +1,161 @@
+
+<html>
+<title>Slovene noun inflection</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html {
+	font-size: 1rem;
+	font-family: Arial;
+}
+td {
+    border: 1px solid #ddd;
+	font-size: 1rem;
+	font-family: Arial;
+    padding: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hiddenText {
+    color: transparent;
+}
+
+.visibleText {
+    color: black;
+}
+</style>
+<h2>Slovene noun inflection</h2>
+<label>Mode:</label>
+<select id="modeSelector">
+    <option value="disappear">Disappear Mode</option>
+    <option value="clear">Clear Mode</option>
+</select>
+<button id="clearButton">Clear All</button><br>
+<button id="shuffleButton">Shuffle Rows</button><br>
+
+<select id="genderFilter">
+    <option value="all">All genders</option>
+    <option value="M.">M.</option>
+    <option value="F.">F.</option>
+    <option value="N.">N.</option>
+</select>
+
+
+<select id="numberFilter">
+    <option value="all">All numbers</option>
+    <option value="Sg">Sg</option>
+    <option value="Du">Du</option>
+    <option value="Pl">Pl</option>
+</select>
+
+<select id="caseFilter">
+    <option value="all">All cases</option>
+    <option value="Nom">Nom</option>
+    <option value="Gen">Gen</option>
+    <option value="Dat">Dat</option>
+    <option value="Acc">Acc</option>
+    <option value="Loc">Loc</option>
+    <option value="Ins">Ins</option>
+</select>
+
+<br><button onclick="resetFilters()">Reset Filters</button> <button onclick="reloadPage()">Reload Page</button>
+
+<table id="data-table"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>1</td><td style="color:blue">M.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–∅</td><td class="hiddenText">–∅</td></tr><tr><td>2</td><td style="color:blue">M.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–a</td><td class="hiddenText">–ega</td></tr><tr><td>3</td><td style="color:blue">M.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–u</td><td class="hiddenText">–emu</td></tr><tr><td>4</td><td style="color:blue">M.</td><td>Sg</td><td>Acc</td><td class="hiddenText">(–a)</td><td class="hiddenText">(–ega)</td></tr><tr><td>5</td><td style="color:blue">M.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–u</td><td class="hiddenText">–em</td></tr><tr><td>6</td><td style="color:blue">M.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>7</td><td style="color:blue">M.</td><td>Du</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>8</td><td style="color:blue">M.</td><td>Du</td><td>Gen</td><td class="hiddenText">–ov</td><td class="hiddenText">–ih</td></tr><tr><td>9</td><td style="color:blue">M.</td><td>Du</td><td>Dat</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>10</td><td style="color:blue">M.</td><td>Du</td><td>Acc</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>11</td><td style="color:blue">M.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>12</td><td style="color:blue">M.</td><td>Du</td><td>Ins</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>13</td><td style="color:blue">M.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>14</td><td style="color:blue">M.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–ov</td><td class="hiddenText">–ih</td></tr><tr><td>15</td><td style="color:blue">M.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>16</td><td style="color:blue">M.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>17</td><td style="color:blue">M.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>18</td><td style="color:blue">M.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–i</td><td class="hiddenText">–imi</td></tr><tr><td>19</td><td style="color:red">F.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>20</td><td style="color:red">F.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>21</td><td style="color:red">F.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>22</td><td style="color:red">F.</td><td>Sg</td><td>Acc</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>23</td><td style="color:red">F.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>24</td><td style="color:red">F.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>25</td><td style="color:red">F.</td><td>Du</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>26</td><td style="color:red">F.</td><td>Du</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>27</td><td style="color:red">F.</td><td>Du</td><td>Dat</td><td class="hiddenText">–ama</td><td class="hiddenText">–ima</td></tr><tr><td>28</td><td style="color:red">F.</td><td>Du</td><td>Acc</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>29</td><td style="color:red">F.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ah</td><td class="hiddenText">–ih</td></tr><tr><td>30</td><td style="color:red">F.</td><td>Du</td><td>Ins</td><td class="hiddenText">–ama</td><td class="hiddenText">–ima</td></tr><tr><td>31</td><td style="color:red">F.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>32</td><td style="color:red">F.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>33</td><td style="color:red">F.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–am</td><td class="hiddenText">–im</td></tr><tr><td>34</td><td style="color:red">F.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–e</td><td class="hiddenText">–e</td></tr><tr><td>35</td><td style="color:red">F.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ah</td><td class="hiddenText">–ih</td></tr><tr><td>36</td><td style="color:red">F.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–ami</td><td class="hiddenText">–imi</td></tr><tr><td>37</td><td style="color:green">N.</td><td>Sg</td><td>Nom</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>38</td><td style="color:green">N.</td><td>Sg</td><td>Gen</td><td class="hiddenText">–a</td><td class="hiddenText">–ega</td></tr><tr><td>39</td><td style="color:green">N.</td><td>Sg</td><td>Dat</td><td class="hiddenText">–u</td><td class="hiddenText">–emu</td></tr><tr><td>40</td><td style="color:green">N.</td><td>Sg</td><td>Acc</td><td class="hiddenText">–o</td><td class="hiddenText">–o</td></tr><tr><td>41</td><td style="color:green">N.</td><td>Sg</td><td>Loc</td><td class="hiddenText">–u</td><td class="hiddenText">–em</td></tr><tr><td>42</td><td style="color:green">N.</td><td>Sg</td><td>Ins</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>43</td><td style="color:green">N.</td><td>Du</td><td>Nom</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>44</td><td style="color:green">N.</td><td>Du</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>45</td><td style="color:green">N.</td><td>Du</td><td>Dat</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>46</td><td style="color:green">N.</td><td>Du</td><td>Acc</td><td class="hiddenText">–i</td><td class="hiddenText">–i</td></tr><tr><td>47</td><td style="color:green">N.</td><td>Du</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>48</td><td style="color:green">N.</td><td>Du</td><td>Ins</td><td class="hiddenText">–oma</td><td class="hiddenText">–ima</td></tr><tr><td>49</td><td style="color:green">N.</td><td>Pl</td><td>Nom</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>50</td><td style="color:green">N.</td><td>Pl</td><td>Gen</td><td class="hiddenText">–∅</td><td class="hiddenText">–ih</td></tr><tr><td>51</td><td style="color:green">N.</td><td>Pl</td><td>Dat</td><td class="hiddenText">–om</td><td class="hiddenText">–im</td></tr><tr><td>52</td><td style="color:green">N.</td><td>Pl</td><td>Acc</td><td class="hiddenText">–a</td><td class="hiddenText">–a</td></tr><tr><td>53</td><td style="color:green">N.</td><td>Pl</td><td>Loc</td><td class="hiddenText">–ih</td><td class="hiddenText">–ih</td></tr><tr><td>54</td><td style="color:green">N.</td><td>Pl</td><td>Ins</td><td class="hiddenText">–i</td><td class="hiddenText">–imi</td></tr></tbody></table>
+
+<script>
+document.querySelectorAll('td').forEach(cell => {
+    cell.addEventListener('click', function() {
+        if (this.classList.contains('hiddenText')) {
+            this.classList.remove('hiddenText');
+            this.classList.add('visibleText');
+            if (document.getElementById('modeSelector').value === 'disappear') {
+                setTimeout(() => {
+                    this.classList.add('hiddenText');
+                    this.classList.remove('visibleText');
+                }, 1500); // Reverts to hidden after 3 seconds
+            }
+        }
+    });
+});
+
+document.getElementById('clearButton').addEventListener('click', function() {
+    if (document.getElementById('modeSelector').value === 'clear') {
+        document.querySelectorAll('.visibleText').forEach(cell => {
+            cell.classList.add('hiddenText');
+            cell.classList.remove('visibleText');
+        });
+    }
+});
+
+document.getElementById('modeSelector').addEventListener('change', function() {
+    // When changing modes, clear all visibility
+    document.querySelectorAll('.visibleText').forEach(cell => {
+        cell.classList.add('hiddenText');
+        cell.classList.remove('visibleText');
+    });
+});
+
+document.getElementById('shuffleButton').addEventListener('click', function() {
+    let table = document.getElementById('data-table');
+    let rows = Array.from(table.querySelectorAll('tr'));
+    shuffleArray(rows);
+    // Clear the table and re-append rows in new order
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
+    rows.forEach(row => table.appendChild(row));
+});
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // swap elements
+    }
+}
+
+document.getElementById('genderFilter').addEventListener('change', filterTable);
+document.getElementById('numberFilter').addEventListener('change', filterTable);
+document.getElementById('caseFilter').addEventListener('change', filterTable); // Change event for select element
+
+function filterTable() {
+    var genderValue = document.getElementById('genderFilter').value;
+    var numberValue = document.getElementById('numberFilter').value;
+    var caseValue = document.getElementById('caseFilter').value; // This now captures select option value
+    var table = document.getElementById('data-table');
+    var tr = table.getElementsByTagName('tr');
+
+    for (var i = 1; i < tr.length; i++) {
+        var tdGender = tr[i].getElementsByTagName('td')[1];
+        var tdNumber = tr[i].getElementsByTagName('td')[2];
+        var tdCase = tr[i].getElementsByTagName('td')[3]; // Targeting the fourth column as specified
+
+        if (tdGender && tdNumber && tdCase) {
+            var txtGender = tdGender.textContent || tdGender.innerText;
+            var txtNumber = tdNumber.textContent || tdNumber.innerText;
+            var txtCase = tdCase.textContent || tdCase.innerText;
+
+            if ((genderValue === "all" || txtGender === genderValue) &&
+                (numberValue === "all" || txtNumber === numberValue) &&
+                (caseValue === "all" || txtCase === caseValue)) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function resetFilters() {
+    document.getElementById('genderFilter').value = "all";
+    document.getElementById('numberFilter').value = "all";
+    document.getElementById('caseFilter').value = "all"; // Reset the select dropdown
+    filterTable();  // Call filterTable to reset the view
+}
+
+function reloadPage() {
+	window.location.reload();
+}
+</script>
+</body>
