@@ -176,7 +176,7 @@ function filterTable() {
     var table = document.getElementById('data-table');
     var tr = table.getElementsByTagName('tr');
 
-    for (var i = 1; i < tr.length; i++) {
+    for (var i = 0; i < tr.length; i++) {
         var tdGender = tr[i].getElementsByTagName('td')[1];
         var tdNumber = tr[i].getElementsByTagName('td')[2];
         var tdCase = tr[i].getElementsByTagName('td')[3]; // Targeting the fourth column as specified
